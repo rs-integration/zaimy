@@ -10,6 +10,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_USER_PASSWORD}
+    ports:
+      - "3306:3306"
     volumes:
       - ./.backups:/var/www/.backups
       - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf

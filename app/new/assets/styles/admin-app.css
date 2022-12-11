@@ -1,0 +1,188 @@
+html, body, div {
+    box-sizing: border-box;
+
+}
+.admin-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+}
+.admin-wrapper .left-menu, .admin-wrapper .admin-main {
+    min-height: 600px;
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.admin-wrapper .left-menu {
+    width: 20%;
+    top:0;
+    left:0;
+    border-right: 1px solid black;
+}
+.admin-wrapper .admin-main {
+    width: 80%;
+    top:0;
+    right: 0;
+    border-left: 1px solid black;
+    font-size: 25px;
+    padding-right: 50px;
+}
+.admin-main input, .admin-main textarea {
+    height: 40px;
+    margin-left: 10px;
+    width: 800px;
+    font-size: 25px;
+    vertical-align: top;
+}
+
+.admin-main textarea {
+    height: 150px !important;
+}
+
+#site_settings {
+    width: 840px;
+    padding: 10px;
+    border: 2px dotted grey;
+    min-height: 400px;
+}
+
+.admin-main label {
+    width: 352px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu-point-wrapper {
+    position: relative;
+    width: 100%;
+}
+.admin-wrapper .menu-point {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid darkgreen;
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px;
+    background: #bebebe;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.admin-wrapper .menu-point:hover {
+    background: gray;
+    color: #ebebeb;
+}
+
+.save-button {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 40px;
+    vertical-align: bottom;
+}
+.save-button input {
+    height: 60px !important;
+}
+.options-list {
+    height: 300px;
+}
+
+.organizations-wrapper {
+
+}
+
+.org-edit-buttons {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top:0;
+}
+.org-edit-buttons .move-left {
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-right: 30px solid grey;
+
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+
+}
+.org-edit-buttons .move-right {
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 30px solid grey;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+}
+
+#cr_block_new {
+    position: relative;
+}
+.org-edit {
+    z-index: 999;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 40px;
+    display: inline-block;
+    margin-top: -10px;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+.org-edit:hover {
+    background: rgba(02,02,02,0.1);
+}
+a.bem_offer:hover {
+    color: black;
+}
+
+.right-buttons {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    padding-right: 7px;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 40px;
+    height: 600px;
+}
+
+.right-buttons .reload {
+
+}
+
+#org_edit {
+    font-size: 20px;
+}
+#org_edit input:not([type='submit']) {
+    width: 950px;
+    margin: 5px 0;
+    height: 30px;
+    font-size: 20px;
+    padding: 0 10px;
+    border-radius: 3px;
+}
+#org_edit input[readonly]:not([type='submit']) {
+    background: #bebebe;
+    color: #3D4045;
+}
+#org_edit .org-form-fields {
+    padding-bottom: 40px;
+}
+#org_edit input[disabled] {
+    background: #8e8e8e;
+    color: #ebebeb;
+}
+
+#org_edit label {
+    width: 244px;
+}

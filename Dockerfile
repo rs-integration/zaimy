@@ -14,8 +14,11 @@ WORKDIR /var/www
 RUN apt-get update -y \
     && apt-get autoremove -y \
     && apt-get install -y --no-install-recommends \
-    zip \
-    unzip \
+        zip \
+        unzip \
+    && docker-php-ext-install \
+        mysqli \
+        pdo_mysql \
     && rm -rf /var/lib/apt/lists/*
 
 #COPY ./.docker/msmtp/msmtprc /etc/msmtprc

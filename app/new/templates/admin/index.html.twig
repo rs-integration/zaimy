@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adminpanel - {{ site_title }}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('admin-app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('admin-app') }}
+    {% endblock %}
+    <script>
+        window.menuPoints = [
+            {% for menuPoint in menuPoints %}
+                {'action': '{{ menuPoint.action }}','label': '{{ menuPoint.label }}' },
+            {% endfor %}
+        ];
+        const LOCALSTORAGE_SAVE_KEY_ACTION = 'admin-current-action';
+        const LOCALSTORAGE_SAVE_KEY_ORGANIZATION_ID = 'admin-current-organization-id';
+        const LOCALSTORAGE_SAVE_KEY_ORGEDIT_CREATE_ENTITY = 'false';
+        
+        const ORGANIZATION_FIELD_PARAMS = {
+            id: {
+                name: 'ИД',
+                readonly: true,
+                tag: 'input',
+                type: 'number'
+            },
+            name: {
+                name: 'Название',
+                readonly: false,
+                tag: 'input',
+                type: 'text'
+            },
+            link: {
+                name: 'Реф. ссылка',
+                readonly: false,
+                tag: 'input',
+                type: 'text'
+            },
+            logo: {
+                name: 'Лого',
+                readonly: false,
+                tag: 'input',
+                type: 'text'
+            },
+            label: {
+                name: 'Акция',
+                readonly: false,
+                tag: 'input',
+                type: 'text'
+            },
+            maxSumm: {
+                name: 'Максимальная сумма',
+                readonly: false,
+                tag: 'input',
+                type: 'number'
+            },
+            minPercent: {
+                name: 'Минимальный процент',
+                readonly: false,
+                tag: 'input',
+                type: 'number'
+            },
+            minAge: {
+                name: 'Минимальный возраст',
+                readonly: false,
+                tag: 'input',
+                type: 'number'
+            },
+            maxAge: {
+                name: 'Максимальный возраст',
+                readonly: false,
+                tag: 'input',
+                type: 'number'
+            },
+            sort: {
+                name: 'Сортировка',
+                readonly: true,
+                tag: 'input',
+                type: 'number'
+            },
+        };
+        
+        function array_move(arr, old_index, new_index) {
+            if (new_index >= arr.length) {
+                var k = new_index - arr.length + 1;
+                while (k--) {
+                    arr.push(undefined);
+                }
+            }
+            arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+            return arr; // for testing
+        }
+    </script>
+    {% for link in cssPaths %}
+        <link href="{{ link }}" rel="stylesheet">
+    {% endfor %}
+</head>
+<body>
+    <div class="admin-wrapper" id="admin">
+        <adminmenu></adminmenu><!--
+        --><adminmain></adminmain>
+    </div>
+</body>
+</html>

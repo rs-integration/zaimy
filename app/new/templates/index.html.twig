@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site_title }}</title>
+    <meta name="description" content="{{ site_description }}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('client-app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('client-app') }}
+    {% endblock %}
+    {% for link in cssPaths %}
+    <link href="{{ link }}" rel="stylesheet">
+    {% endfor %}
+</head>
+<body>
+<div id="index_app">
+    <main-header></main-header>
+    <main-content></main-content>
+    <main-footer></main-footer>
+    <notifications-and-modals></notifications-and-modals>
+</div>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        {{ site_ymetrics }}
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/{{ site_ym_counter }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script src="assets/59a7606e/jquery.js"></script>
+    <script src="assets/a9b4c128/yii.js"></script>
+    <script src="js/notificate.js"></script>
+</body>
+</html>
